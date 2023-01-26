@@ -1,4 +1,3 @@
-// import Notiflix from 'notiflix';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const refs = {
@@ -7,8 +6,6 @@ const refs = {
   amount: document.forms[0].amount,
   submit: document.querySelector('button[type=submit]'),
 };
-
-// console.log(refs);
 
 refs.submit.addEventListener('click', handleSubmit);
 
@@ -25,6 +22,7 @@ function handleSubmit(event) {
   for (let i = 0; i < amount; i += 1) {
     let position = i + 1;
     delay = +delay + i * step;
+
     promises.push(
       createPromise(position, delay)
         .then(({ position, delay }) => {
